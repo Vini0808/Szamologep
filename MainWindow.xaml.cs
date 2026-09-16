@@ -79,6 +79,35 @@ namespace Szamologep
             Button button = (Button)sender;
             string buttonContent = button.Content.ToString();
             tb_kijelzo.Text += buttonContent;
-        }
+
+            bool isOperator = buttonContent == "+" || buttonContent == "-" || buttonContent == "*" || buttonContent == "/";
+            bool isClear = buttonContent == "C";
+            bool isEquals = buttonContent == "=";
+            bool isDigit = char.IsDigit(buttonContent[0]);
+
+            string inputDigit = "";
+            string part2 = "";
+
+            int firstToEquation = 0;
+
+            if (isDigit) {
+                if (inputDigit != "")
+                {
+                    inputDigit = "";
+                    tb_kijelzo.Text += inputDigit;
+                }
+                inputDigit += buttonContent;
+                tb_kijelzo.Text += inputDigit;
+            }
+            else if (isOperator) {
+                if (tb_kijelzo.Text.Length > 0 && !"+-*/".Contains(tb_kijelzo.Text[tb_kijelzo.Text.Length - 1]))
+                {
+                    return;
+                }
+                tb_kijelzo.Text += buttonContent;
+                firstToEquation = Convert.ToInt32(inputDigit);
+
+            }
+        } 
     }
 }
