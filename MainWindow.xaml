@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Szamologep"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Számológép" Height="400" Width="300">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock x:Name="tb_kijelzo" Grid.Row="0" Text="0" FontSize="32" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"/>
+
+        <Grid x:Name="ButtonGrid" Grid.Row="1"/>
 
     </Grid>
 </Window>
