@@ -77,6 +77,20 @@ namespace Szamologep
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
+            List<int> numbers = new List<int>();
+
+            // Get the content of the clicked button
+            // Try to do it like this:
+            // ClickedButton -> List
+            // Try to solve the whole equation.
+            // If not possible, then just get the contect like if(+) or (-) or (*) or (/)
+            // and then just get the numbers before and after the operator.
+            // Then solve the equation and display the result in the textbox.
+
+
+
+
+
             string buttonContent = button.Content.ToString();
             tb_kijelzo.Text += buttonContent;
 
@@ -106,7 +120,6 @@ namespace Szamologep
                 }
                 tb_kijelzo.Text += buttonContent;
                 firstToEquation = Convert.ToInt32(inputDigit);
-
             }
         } 
     }
